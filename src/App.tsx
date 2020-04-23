@@ -1,14 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+import { toggleLoader } from './redux/actions/toggle-loader.action';
+import { HeaderComponent } from './components/header.component';
+import { LoaderComponent } from './components/loader.component';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
-  );
+interface AppProps {
+	isShowLoader?: boolean;
+	toggleLoader?: any;
 }
 
-export default App;
+function App(props: AppProps) {
+	return (
+		<div className="App">
+			<HeaderComponent />
+			{
+				props.isShowLoader && <LoaderComponent />
+			}
+		</div>
+	);
+}
+
+const mapStateToProps = (state: any) => ({ isShowLoader: state.loaderReducer.isShowLoader })
+
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ toggleLoader }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
