@@ -5,6 +5,7 @@ import { toggleLoader } from './redux/actions/toggle-loader.action';
 import { HeaderComponent } from './components/header.component';
 import { LoaderComponent } from './components/loader.component';
 import { ProductProfilePage } from './pages/product-profile/product-profile.page';
+import { ProductListPage } from './pages/product-list/product-list.page';
 
 interface AppProps {
 	isShowLoader?: boolean;
@@ -14,8 +15,10 @@ interface AppProps {
 function App(props: AppProps) {
 	return (
 		<div className="App">
-			<HeaderComponent />
-			{/* <ProductProfilePage /> */}
+			<div className="fixed w-full">
+				<HeaderComponent />
+			</div>
+			<ProductListPage />
 			{
 				props.isShowLoader && <LoaderComponent />
 			}

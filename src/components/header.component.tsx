@@ -8,7 +8,7 @@ interface HeaderComponentProps {
 export const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 	const [isHoverSideBar, setIsHoverSideBar] = useState<boolean>(false);
 	return <header className="h-24 relative">
-		<SideBarComponent isHoverSideBar={isHoverSideBar} setIsHoverSideBar={setIsHoverSideBar}/>
+		<SideBarComponent isHoverSideBar={isHoverSideBar} setIsHoverSideBar={setIsHoverSideBar} />
 		<div className="flex pt-6  items-center justify-between mx-3">
 			<div className="flex items-center">
 				<div className="mr-3 pr-2 cursor-pointer"
@@ -16,7 +16,7 @@ export const HeaderComponent: React.FC<HeaderComponentProps> = (props) => {
 						event.preventDefault();
 						setIsHoverSideBar(true);
 					}}
-					>
+				>
 					<svg width="32" height="32">
 						<path fill="#000" fillRule="evenodd" d="M4 9h25v.5H4V9zm0 7.2h25v.5H4v-.5zm.3 7.3H4v.5h25v-.5H4.3z" clipRule="evenodd" />
 					</svg>
