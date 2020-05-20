@@ -4,6 +4,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { toggleLoader } from './redux/actions/toggle-loader.action';
 import { HeaderComponent } from './components/header.component';
 import { LoaderComponent } from './components/loader.component';
+import { ProductProfilePage } from './pages/product-profile/product-profile.page';
 
 interface AppProps {
 	isShowLoader?: boolean;
@@ -14,6 +15,7 @@ function App(props: AppProps) {
 	return (
 		<div className="App">
 			<HeaderComponent />
+			{/* <ProductProfilePage /> */}
 			{
 				props.isShowLoader && <LoaderComponent />
 			}
