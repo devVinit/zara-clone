@@ -18,7 +18,8 @@ function App(props: AppProps) {
 			<div className="fixed w-full">
 				<HeaderComponent />
 			</div>
-			<ProductListPage />
+			{/* <ProductListPage /> */}
+			<ProductProfilePage />
 			{
 				props.isShowLoader && <LoaderComponent />
 			}
